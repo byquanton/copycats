@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.gradleup.shadow" version "9.2.2"
     id 'me.modmuss50.mod-publish-plugin' version "0.5.1"
 }
 
@@ -53,7 +53,7 @@ dependencies {
     modLocalRuntime("curse.maven:jade-324717:${jade_forge_curse_id}")
     modLocalRuntime("mezz.jei:jei-${minecraft_version}-forge:${jei_forge_version}")
 
-    modLocalRuntime("curse.maven:embeddium-908741:${embeddium_forge_curse_id}")
+    modLocalRuntime("curse.maven:sodium-394468:${sodium_neoforge_curse_id}")
     modImplementation("curse.maven:additional-placements-674852:${additionalplacements_forge_curse_id}")
     modImplementation("curse.maven:athena-841890:${athena_forge_curse_id}")
     // modLocalRuntime("curse.maven:create-industry-693815:${tfmg_forge_curse_id}")
@@ -109,11 +109,13 @@ sourcesJar {
     from commonSources.archiveFile.map { zipTree(it) }
 }
 
+/*
 components.java {
     withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
         skip()
     }
 }
+*/
 
 tasks.publishMods.dependsOn(tasks.assemble)
 tasks.publishMods.mustRunAfter(tasks.build)

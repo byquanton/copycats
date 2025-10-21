@@ -18,7 +18,8 @@ dependencies {
     modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_common_version}")
 
     modCompileOnly("curse.maven:additional-placements-fabric-930469:${additionalplacements_fabric_curse_id}")
-    modCompileOnly("curse.maven:embeddium-908741:${embeddium_curse_id}")
+    // modImplementation("curse.maven:sodium-394468:${sodium_neoforge_curse_id}")
+    modImplementation("maven.modrinth:sodium:mc1.20.1-0.5.13-fabric")
     modCompileOnly("curse.maven:selene-499980:${moonlight_curse_fabric_id}")
     modCompileOnly("curse.maven:vertical-slabs-compat-724387:${vertical_slabs_curse_fabric_id}")
 

@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.gradleup.shadow" version "9.2.2"
     id 'me.modmuss50.mod-publish-plugin' version "0.5.1"
 }
 
@@ -106,11 +106,13 @@ sourcesJar {
     from commonSources.archiveFile.map { zipTree(it) }
 }
 
+/*
 components.java {
     withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
         skip()
     }
 }
+*/
 
 tasks.publishMods.dependsOn(tasks.assemble)
 tasks.publishMods.mustRunAfter(tasks.build)
